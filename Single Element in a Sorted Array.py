@@ -9,6 +9,10 @@ class unitest(unittest.TestCase):
         nums = [1];
         ans = 1;
         self.assertEqual(Solution().singleNonDuplicate(nums),ans);
+    def testList(self):
+        nums = [1,1,3];
+        ans = 3;
+        self.assertEqual(Solution().singleNonDuplicate(nums),ans);
 
 class Solution():
     def singleNonDuplicate(self, nums):
