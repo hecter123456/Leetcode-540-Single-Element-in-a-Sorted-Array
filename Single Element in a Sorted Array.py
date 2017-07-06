@@ -16,10 +16,14 @@ class unitest(unittest.TestCase):
 
 class Solution():
     def singleNonDuplicate(self, nums):
-        ans = 0
-        for item in nums:
-            ans = ans^item
-        return ans
+        botton, top = 0,len(nums)-1
+        while botton < top:
+            middle = int((botton + top) / 2)
+            if nums[middle] == nums[middle ^ 1]:
+                botton = middle+1
+            else:
+                top = middle
+        return nums[botton]
 
 if __name__ == '__main__':
     unittest.main()
